@@ -1,6 +1,4 @@
 
-import { BUSINESS_DETAILS } from './constants';
-
 const SERVICE_TEMPLATE = (name: string) => ({
   h1: `${name} in Austin TX`,
   overview: `At EP Concrete, our commitment to excellence is reflected in our professional ${name} services in Austin TX. We specialize in providing structural foundations and aesthetic surface solutions that are engineered to meet the highest industry standards. A ${name} installation is a significant investment in your property’s longevity and functional value. Our team approaches every project with a detailed eye for site preparation, material selection, and precision execution. Whether we are serving residential homeowners looking to enhance curb appeal or commercial property managers requiring heavy-duty industrial paving, we ensure the finished product exceeds expectations for durability and performance. In the competitive Austin market, our ${name} work stands out for its structural integrity and refined finish.`,
