@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "image-tiler"
+version = "1.0.0"
+description = "Split a large image into print-ready tiles with correct bleed overlap (for all-over print T-shirts and posters)."
+readme = "README.md"
+requires-python = ">=3.8"
+license = { text = "MIT" }
+dependencies = ["Pillow>=9"]
+
+[project.optional-dependencies]
+dev = ["pytest>=7"]
+
+[project.scripts]
+tile-image = "tile_image:main"
+
+[tool.setuptools]
+py-modules = ["tile_image"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
