@@ -111,6 +111,31 @@ In **Authentication → URL Configuration**, add your site URL (e.g.
 `http://localhost:3000` and your production domain) to **Redirect URLs** so the
 `/auth/callback` flow works.
 
+## ▲ Deploy to Vercel
+
+This Next.js app lives in the **`impact-coach-video-library/` subdirectory** of
+the repo, so the one setting that matters most is the **Root Directory**.
+
+1. Push this repo to GitHub (already done if you're reading this on a branch).
+2. In Vercel: **Add New → Project → Import** this repository.
+3. **Important — set the Root Directory** to `impact-coach-video-library`
+   (Configure Project → *Root Directory* → Edit → pick the folder). Vercel then
+   auto-detects Next.js; leave the build/install commands on their defaults.
+4. Add **Environment Variables** (same names as `.env.local`):
+   - `NEXT_PUBLIC_SUPABASE_URL`
+   - `NEXT_PUBLIC_SUPABASE_ANON_KEY`
+5. **Deploy.** After the first deploy, copy your Vercel URL
+   (e.g. `https://your-app.vercel.app`) and add it in Supabase under
+   **Authentication → URL Configuration**:
+   - **Site URL**: your Vercel URL
+   - **Redirect URLs**: add `https://your-app.vercel.app/auth/callback`
+6. Visit the deployed URL, create your account, and promote yourself to admin
+   with the SQL in step 4 above.
+
+> Password login works out of the box. If you want zero email friction, disable
+> **Confirm email** in Supabase (Authentication → Providers → Email); otherwise
+> new coaches confirm via the email link before their first sign-in.
+
 ## 👥 Roles
 
 - **Coach** — sign in, add videos, favorite, search/filter, remove their own videos.
